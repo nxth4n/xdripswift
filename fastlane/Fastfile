@@ -40,7 +40,7 @@ platform :ios do
     )
 
     previous_build_number = latest_testflight_build_number(
-      app_identifier: "com.#{TEAMID}.xdripswift_v2",
+      app_identifier: "com.#{TEAMID}.xdripswift_vtwo",
       api_key: api_key,
     )
 
@@ -55,14 +55,14 @@ platform :ios do
       type: "appstore",
       git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
       app_identifier: [
-        "com.#{TEAMID}.xdripswift_v2",
-        "com.#{TEAMID}.xdripswift_v2.xDrip4iOS-Widget",
-        "com.#{TEAMID}.xdripswift_v2.watchkitapp"
+        "com.#{TEAMID}.xdripswift_vtwo",
+        "com.#{TEAMID}.xdripswift_vtwo.xDrip4iOS-Widget",
+        "com.#{TEAMID}.xdripswift_vtwo.watchkitapp"
       ]
     )
 
     previous_build_number = latest_testflight_build_number(
-      app_identifier: "com.#{TEAMID}.xdripswift_v2",
+      app_identifier: "com.#{TEAMID}.xdripswift_vtwo",
       api_key: api_key,
     )
 
@@ -79,21 +79,21 @@ platform :ios do
 
     update_code_signing_settings(
       path: "#{GITHUB_WORKSPACE}/xdrip.xcodeproj",
-      profile_name: mapping["com.#{TEAMID}.xdripswift_v2"],
+      profile_name: mapping["com.#{TEAMID}.xdripswift_vtwo"],
       code_sign_identity: "iPhone Distribution",
       targets: ["xdrip"]
     )
 
     update_code_signing_settings(
       path: "#{GITHUB_WORKSPACE}/xdrip.xcodeproj",
-      profile_name: mapping["com.#{TEAMID}.xdripswift_v2.xDrip4iOS-Widget"],
+      profile_name: mapping["com.#{TEAMID}.xdripswift_vtwo.xDrip4iOS-Widget"],
       code_sign_identity: "iPhone Distribution",
       targets: ["xDrip4iOS Widget"]
     )
     
     update_code_signing_settings(
       path: "#{GITHUB_WORKSPACE}/xdrip.xcodeproj",
-      profile_name: mapping["com.#{TEAMID}.xdripswift_v2.watchkitapp"],
+      profile_name: mapping["com.#{TEAMID}.xdripswift_vtwo.watchkitapp"],
       code_sign_identity: "iPhone Distribution",
       targets: ["Watch App"]
     )
@@ -147,17 +147,17 @@ platform :ios do
       }
     end
 
-    configure_bundle_id("xdrip", "com.#{TEAMID}.xdripswift_v2", [
+    configure_bundle_id("xdrip", "com.#{TEAMID}.xdripswift_vtwo", [
       Spaceship::ConnectAPI::BundleIdCapability::Type::APP_GROUPS,
       Spaceship::ConnectAPI::BundleIdCapability::Type::HEALTHKIT,
       Spaceship::ConnectAPI::BundleIdCapability::Type::NFC_TAG_READING
     ])
 
-    configure_bundle_id("xDrip4iOS Widget", "com.#{TEAMID}.xdripswift_v2.xDrip4iOS-Widget", [
+    configure_bundle_id("xDrip4iOS Widget", "com.#{TEAMID}.xdripswift_two.xDrip4iOS-Widget", [
       Spaceship::ConnectAPI::BundleIdCapability::Type::APP_GROUPS
     ])
     
-    configure_bundle_id("Watch App", "com.#{TEAMID}.xdripswift_v2.watchkitapp", [
+    configure_bundle_id("Watch App", "com.#{TEAMID}.xdripswift_vtwo.watchkitapp", [
       Spaceship::ConnectAPI::BundleIdCapability::Type::APP_GROUPS
     ])
     
@@ -180,9 +180,9 @@ platform :ios do
       force: true,
       git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
       app_identifier: [
-        "com.#{TEAMID}.xdripswift_v2",
-        "com.#{TEAMID}.xdripswift_v2.xDrip4iOS-Widget",
-        "com.#{TEAMID}.xdripswift_v2.watchkitapp"
+        "com.#{TEAMID}.xdripswift_vtwo",
+        "com.#{TEAMID}.xdripswift_vtwo.xDrip4iOS-Widget",
+        "com.#{TEAMID}.xdripswift_vtwo.watchkitapp"
       ]
     )
   end
@@ -202,7 +202,7 @@ platform :ios do
       bundle_id = Spaceship::ConnectAPI::BundleId.find(identifier)
     end
 
-    find_bundle_id("com.#{TEAMID}.xdripswift_v2")
+    find_bundle_id("com.#{TEAMID}.xdripswift_vtwo")
 
     match(
       type: "appstore",
