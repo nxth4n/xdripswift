@@ -153,7 +153,7 @@ platform :ios do
       Spaceship::ConnectAPI::BundleIdCapability::Type::NFC_TAG_READING
     ])
 
-    configure_bundle_id("xDrip4iOS Widget", "com.#{TEAMID}.xdripswift_two.xDrip4iOS-Widget", [
+    configure_bundle_id("xDrip4iOS Widget", "com.#{TEAMID}.xdripswift-v2.xDrip4iOS-Widget", [
       Spaceship::ConnectAPI::BundleIdCapability::Type::APP_GROUPS
     ])
     
