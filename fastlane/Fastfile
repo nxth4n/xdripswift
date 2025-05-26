@@ -163,7 +163,7 @@ platform :ios do
       }
     end
 
-    configure_bundle_id("xdrip", "com.#{TEAMID}.-v2", [
+    configure_bundle_id("xdrip", "com.#{TEAMID}.xdripswift-v2", [
       Spaceship::ConnectAPI::BundleIdCapability::Type::APP_GROUPS,
       Spaceship::ConnectAPI::BundleIdCapability::Type::HEALTHKIT,
       Spaceship::ConnectAPI::BundleIdCapability::Type::NFC_TAG_READING
